@@ -1,0 +1,153 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickHandler"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="viewModel"
+            type="com.tensor.example.ui.login.LoginViewModel" />
+
+        <variable
+            name="isLoading"
+            type="Boolean" />
+
+        <import type="android.view.View" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.login.LoginActivity">
+
+        <include
+            android:id="@+id/include_toolbar"
+            layout="@layout/layout_toolbar"
+            app:clickHandler="@{clickHandler}"
+            app:isBackBtn="@{false}"
+            app:isMoreIcon="@{false}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:toolbarTitle="@{@string/login_title}" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtEmail"
+            style="@style/EditTextTheme"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:backgroundTint="@color/color_hint_grey"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:text="@={viewModel.email}"
+            android:textColor="@color/gradient_blue"
+            android:textColorHint="@color/color_dark_grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include_toolbar" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtPassword"
+            style="@style/EditTextTheme"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:backgroundTint="@color/color_hint_grey"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:text="@={viewModel.password}"
+            android:textColor="@color/gradient_blue"
+            android:textColorHint="@color/color_dark_grey"
+            app:layout_constraintEnd_toEndOf="@+id/edtEmail"
+            app:layout_constraintStart_toStartOf="@+id/edtEmail"
+            app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLogin"
+            style="@style/AppCompactButtonTheme"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:background="@color/color_dark_grey"
+            android:gravity="center"
+            android:onClick="@{clickHandler::onClick}"
+            android:text="@{isLoading ? @string/empty : @string/login}"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="@+id/edtEmail"
+            app:layout_constraintStart_toStartOf="@+id/edtEmail"
+            app:layout_constraintTop_toBottomOf="@+id/edtPassword" />
+
+        <ProgressBar
+            android:id="@+id/pbProgress"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:progressTint="@color/white"
+            android:visibility="@{isLoading ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@+id/btnLogin"
+            app:layout_constraintEnd_toEndOf="@+id/btnLogin"
+            app:layout_constraintStart_toStartOf="@+id/btnLogin"
+            app:layout_constraintTop_toTopOf="@+id/btnLogin" />
+
+        <View
+            android:id="@+id/dividerOne"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/color_hint_grey"
+            app:layout_constraintBottom_toBottomOf="@+id/txtOr"
+            app:layout_constraintEnd_toStartOf="@+id/txtOr"
+            app:layout_constraintStart_toStartOf="@+id/edtEmail"
+            app:layout_constraintTop_toTopOf="@+id/txtOr" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtOr"
+            style="@style/TextViewTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_13sdp"
+            android:background="?attr/selectableItemBackground"
+            android:padding="@dimen/_10sdp"
+            android:text="@string/txt_or"
+            android:textColor="@color/color_dark_grey"
+            app:layout_constraintEnd_toStartOf="@+id/dividerTwo"
+            app:layout_constraintStart_toEndOf="@+id/dividerOne"
+            app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+
+        <View
+            android:id="@+id/dividerTwo"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/color_hint_grey"
+            app:layout_constraintBottom_toBottomOf="@+id/txtOr"
+            app:layout_constraintEnd_toEndOf="@+id/edtEmail"
+            app:layout_constraintStart_toEndOf="@+id/txtOr"
+            app:layout_constraintTop_toTopOf="@+id/txtOr" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSignup"
+            style="@style/AppCompactButtonTheme"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:background="@color/color_dark_grey"
+            android:gravity="center"
+            android:onClick="@{clickHandler::onClick}"
+            android:text="@string/signup"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="@+id/edtEmail"
+            app:layout_constraintStart_toStartOf="@+id/edtEmail"
+            app:layout_constraintTop_toBottomOf="@+id/txtOr" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

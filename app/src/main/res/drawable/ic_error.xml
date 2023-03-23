@@ -1,0 +1,14 @@
+<!--
+  ~ Copyright © 2020 TheGivingApp . All rights reserved.
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+        android:width="20dp"
+        android:height="20dp"
+        android:viewportWidth="20"
+        android:viewportHeight="20">
+    <path
+            android:fillColor="#FFFFFF"
+            android:fillType="nonZero"
+            android:pathData="M18.186,15.966l-7.24,-12.905a1.077,1.077 0,0 0,-1.891 0l-7.24,12.905c-0.42,0.748 0.105,1.686 0.944,1.686h14.482c0.839,0 1.364,-0.938 0.945,-1.686zM10.01,7.035a0.84,0.84 0,0 1,0.826 0.874l-0.137,4.901a0.7,0.7 0,0 1,-0.692 0.692,0.703 0.703,0 0,1 -0.693,-0.692l-0.133,-4.9c-0.01,-0.478 0.362,-0.875 0.83,-0.875zM10,15.9a0.873,0.873 0,0 1,-0.86 -0.885c0,-0.488 0.386,-0.885 0.86,-0.885s0.86,0.397 0.86,0.885a0.873,0.873 0,0 1,-0.86 0.885z" />
+</vector>

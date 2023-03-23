@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1096752183167",
+    "project_id": "tensoriot-b7cd3",
+    "storage_bucket": "tensoriot-b7cd3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1096752183167:android:5608c36148215d24230c4a",
+        "android_client_info": {
+          "package_name": "com.tensor.example"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1096752183167-q7efsaslh826ibuo6gn33upf6b6737jr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tensor.example",
+            "certificate_hash": "6f59a4340db3bc55668fdfc04a8960e0254ca77f"
+          }
+        },
+        {
+          "client_id": "1096752183167-g272hf70g8caqt71d3ussvnhh4iu60aj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLRZEt6mwckV2t3o4hsOjs-vFK7hPfQ4o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1096752183167-g272hf70g8caqt71d3ussvnhh4iu60aj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

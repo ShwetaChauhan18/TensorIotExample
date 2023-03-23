@@ -1,0 +1,114 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickHandler"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="viewModel"
+            type="com.tensor.example.ui.profile.ProfileViewModel" />
+
+        <variable
+            name="user"
+            type="com.google.firebase.auth.FirebaseUser" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.profile.ProfileActivity">
+
+        <View
+            android:id="@+id/bgView"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_100sdp"
+            android:background="@color/color_hint_grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/userImg"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:onClick="@{clickHandler::onClick}"
+            app:layout_constraintBottom_toBottomOf="@+id/bgView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bgView"
+            app:placeholder="@{@drawable/ic_user_placeholder}"
+            app:srcCompat="@drawable/ic_user_placeholder" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtUserName"
+            style="@style/TextViewTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:paddingStart="@dimen/_5sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingEnd="0dp"
+            android:text="@{user.displayName}"
+            android:textColor="@color/color_dark_grey"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintEnd_toEndOf="@+id/userImg"
+            app:layout_constraintStart_toStartOf="@+id/userImg"
+            app:layout_constraintTop_toBottomOf="@+id/userImg" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtUserDetail"
+            style="@style/TextViewTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:paddingStart="@dimen/_5sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingEnd="0dp"
+            android:text="@{user.email}"
+            android:textColor="@color/color_hint_grey_dark"
+            app:layout_constraintEnd_toEndOf="@+id/userImg"
+            app:layout_constraintStart_toStartOf="@+id/userImg"
+            app:layout_constraintTop_toBottomOf="@+id/txtUserName" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnUser"
+            style="@style/AppCompactButtonTheme"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:background="@color/color_dark_grey"
+            android:gravity="center"
+            android:onClick="@{clickHandler::onClick}"
+            android:paddingStart="@dimen/_20sdp"
+            android:paddingEnd="@dimen/_20sdp"
+            android:text="@string/user"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toTopOf="@+id/btnLogout"
+            app:layout_constraintEnd_toEndOf="@+id/btnLogout"
+            app:layout_constraintStart_toStartOf="@+id/btnLogout" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLogout"
+            style="@style/AppCompactButtonTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:background="@color/color_dark_grey"
+            android:gravity="center"
+            android:onClick="@{clickHandler::onClick}"
+            android:paddingStart="@dimen/_20sdp"
+            android:paddingEnd="@dimen/_20sdp"
+            android:text="@string/logout"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">TensorIotExample</string>
+    <string name="profile_image_description">Profile Image</string>
+
+    <!--Login-->
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="signup">SIGN UP</string>
+    <string name="login">LOG IN</string>
+    <string name="logout">LOGOUT</string>
+    <string name="user">USER</string>
+    <string name="login_title">Login to your app</string>
+
+    <!--Register-->
+    <string name="register">Register</string>
+    <string name="userTitle">User</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="username">Username</string>
+    <string name="short_bio">A short bio</string>
+    <string name="set_display_pic">Set Display Picture</string>
+    <string name="txt_or">OR</string>
+    <string name="empty"></string>
+
+    <!--Error Message-->
+    <string name="form_is_valid">Form is valid</string>
+    <string name="error_email_address">Please enter email address</string>
+    <string name="error_password">Please enter password</string>
+    <string name="error_confirm_password">Please enter confirm password</string>
+    <string name="error_password_matched">Password is not matched with confirm password</string>
+    <string name="error_invalid_email">Please enter valid email address</string>
+    <string name="error_invalid_password">Password must contain 8–16 characters, including Uppercase Alphabet, Lowercase Alphabet, Number and Special Character</string>
+    <string name="error_valid_password">Please enter valid password</string>
+    <string name="error_user_name">Please enter User name</string>
+
+</resources>

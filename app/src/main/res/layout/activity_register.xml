@@ -1,0 +1,160 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickHandler"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="viewModel"
+            type="com.tensor.example.ui.register.RegisterViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.register.RegisterActivity">
+
+        <include
+            android:id="@+id/include_toolbar"
+            layout="@layout/layout_toolbar"
+            app:clickHandler="@{clickHandler}"
+            app:isMoreIcon="@{true}"
+            app:isBackBtn="@{true}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:toolbarTitle="@{@string/register}" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/userImg"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:onClick="@{clickHandler::onClick}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include_toolbar"
+            app:placeholder="@{@drawable/ic_user_placeholder}"
+            app:srcCompat="@drawable/ic_user_placeholder" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtSetImg"
+            style="@style/TextViewTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:paddingStart="@dimen/_5sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingEnd="0dp"
+            android:text="@string/set_display_pic"
+            android:textColor="@color/color_hint_grey"
+            app:layout_constraintStart_toEndOf="@+id/userImg"
+            app:layout_constraintTop_toTopOf="@+id/userImg" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtEmail"
+            style="@style/EditTextTheme"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:backgroundTint="@color/color_hint_grey"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:text="@={viewModel.email}"
+            android:textColor="@color/gradient_blue"
+            android:textColorHint="@color/color_dark_grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userImg" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtPassword"
+            style="@style/EditTextTheme"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:backgroundTint="@color/color_hint_grey"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:text="@={viewModel.password}"
+            android:textColor="@color/gradient_blue"
+            android:textColorHint="@color/color_dark_grey"
+            app:layout_constraintEnd_toEndOf="@+id/edtEmail"
+            app:layout_constraintStart_toStartOf="@+id/edtEmail"
+            app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtConfPassword"
+            style="@style/EditTextTheme"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:backgroundTint="@color/color_hint_grey"
+            android:hint="@string/confirm_password"
+            android:inputType="textPassword"
+            android:text="@={viewModel.confirmPassword}"
+            android:textColor="@color/gradient_blue"
+            android:textColorHint="@color/color_dark_grey"
+            app:layout_constraintEnd_toEndOf="@+id/edtEmail"
+            app:layout_constraintStart_toStartOf="@+id/edtEmail"
+            app:layout_constraintTop_toBottomOf="@+id/edtPassword" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtUsername"
+            style="@style/EditTextTheme"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:backgroundTint="@color/color_hint_grey"
+            android:hint="@string/username"
+            android:inputType="textPassword"
+            android:text="@={viewModel.userName}"
+            android:textColor="@color/gradient_blue"
+            android:textColorHint="@color/color_dark_grey"
+            app:layout_constraintEnd_toEndOf="@+id/edtEmail"
+            app:layout_constraintStart_toStartOf="@+id/edtEmail"
+            app:layout_constraintTop_toBottomOf="@+id/edtConfPassword" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtSortBio"
+            style="@style/EditTextTheme"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:backgroundTint="@color/color_hint_grey"
+            android:hint="@string/short_bio"
+            android:inputType="textPassword"
+            android:text="@={viewModel.shortBio}"
+            android:textColor="@color/gradient_blue"
+            android:textColorHint="@color/color_dark_grey"
+            app:layout_constraintEnd_toEndOf="@+id/edtEmail"
+            app:layout_constraintStart_toStartOf="@+id/edtEmail"
+            app:layout_constraintTop_toBottomOf="@+id/edtUsername" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSignup"
+            style="@style/AppCompactButtonTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:background="@color/color_dark_grey"
+            android:gravity="center"
+            android:onClick="@{clickHandler::onClick}"
+            android:paddingStart="@dimen/_20sdp"
+            android:paddingEnd="@dimen/_20sdp"
+            android:text="@string/signup"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="@+id/edtEmail"
+            app:layout_constraintTop_toBottomOf="@+id/edtSortBio" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
